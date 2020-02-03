@@ -36,7 +36,7 @@ $cd /Users/〜〜/Desktop/NAIST
      
      
 ## Step 1
-/Users/〜〜/Desktop/NAIST/2020SpringSeminar内のObjectDetectionフォルダを編集して，リモートリポジトリにアップロードしよう．<br>
+/Users/〜〜/Desktop/NAIST/2020SpringSeminar内のObjectDetectionフォルダを編集して，リモートリポジトリにアップロード(push)しよう．<br>
 
 
 
