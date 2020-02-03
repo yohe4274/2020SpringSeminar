@@ -1,0 +1,16 @@
+data/JapaneseObject/000027.jpg
+data/JapaneseObject/000232.jpg
+data/JapaneseObject/000021.jpg
+data/JapaneseObject/000396.jpg
+data/JapaneseObject/000496.jpg
+data/JapaneseObject/000084.jpg
+data/JapaneseObject/000296.jpg
+data/JapaneseObject/000530.jpg
+data/JapaneseObject/000647.jpg
+data/JapaneseObject/000488.jpg
+data/JapaneseObject/000300.jpg
+data/JapaneseObject/000667.jpg
+data/JapaneseObject/000205.jpg
+data/JapaneseObject/000614.jpg
+data/JapaneseObject/000617.jpg
+data/JapaneseObject/000438.jpg
