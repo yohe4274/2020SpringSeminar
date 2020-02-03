@@ -5,7 +5,7 @@ Hi there✌️ this repository is for Spring Seminar 2020 in Ubi Lab
 
 
 
-## How to Use
+## First steps
 #### 0. デスクトップに新規フォルダ(ディレクトリ)を作成．
 (ディレクトリ名：NAIST)
 ```
@@ -31,3 +31,8 @@ $cd /Users/〜〜/Desktop/NAIST
     $git add *
     $git commit -m "メッセージを自分で適当に書く"
     $git push origin master
+    
+#### 6. 不要なフォルダを削除する．
+    $rm -rf /Users/〜〜/Desktop/NAIST/2020SpringSeminar
+
+## How to Use
