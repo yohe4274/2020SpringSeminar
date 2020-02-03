@@ -18,8 +18,16 @@ $cd /Users/〜〜/Desktop/NAIST
 
 #### 2. ブラウザのGitHubページにて自分のアカウントにログインし，新規リモートレポジトリを作成します．
   (レポジトリ名：Ubi_ObjectDetection)
+
 #### 3. 作成したリモートレポジトリをローカルレポジトリにクローンします．(2020SpringSeminarディレクトリの外で以下のコマンド)
     $git clone https://github.com/GitHubアカウント名/Ubi_ObjectDetection.git
 ##### [確認1]:NAISTディレクトリ内に2020SpringSeminar, Ubi_ObjectDetectionの2フォルダがあることを確認．
 
-#### 4. このレポジトリ内のすべてのファイル，フォルダをNAIST_2020SSに移します．
+#### 4. 2020SpringSeminar内のすべてのファイル，フォルダをUbi_ObjectDetectionに移します．
+    $mv 2020SpringSeminar/* Ubi_ObjectDtection
+    
+#### 5. ローカルリポジトリの情報をリモートリポジトリにアップロード(push)する．
+    $cd /Users/〜〜/Desktop/NAIST/Ubi_ObjectDetection
+    $git add *
+    $git commit -m "メッセージを自分で適当に書く"
+    $git push origin master
