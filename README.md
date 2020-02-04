@@ -8,14 +8,16 @@ Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedu
 ├── ObjectDetection<br>
 │   ├── cfg<br>
 │   ├── data<br>
-│   │   └── Torii<br>
+│   │   └── Torii<br>YOLOv3に学習させる画像データとラベルデータ<br>
 │   ├── examples<br>
 │   ├── include<br>
 │   ├── python<br>
 │   ├── scripts<br>
 │   └── src<br>
-└── Resource<br>
-    └── Torii
+└── Resource：画像データ群<br>
+    └── Torii<br>
+    └── Pagoda<br>
+    └── CarNumberPlate<br>
 
 -----------
 # How to Use
