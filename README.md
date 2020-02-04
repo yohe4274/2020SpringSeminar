@@ -88,6 +88,10 @@ $python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/R
 
 ### for Pagoda Team
 1. ObjectDetectionディレクトリ内のdataフォルダ内に新規フォルダを作成．(名前:Pagoda)
+```
+$ mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/data/Pagoda
+```
+
 2. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
 $python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Pagoda ./2020SpringSeminar/Resource/JapaneseObject.txt   
