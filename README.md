@@ -3,12 +3,12 @@ Hi there✌️ this repository is for Spring Seminar 2020 in Ubi Lab<br>
 Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedule)
 
 # Contents
-
-.<br>
+<pre>
+.
 ├── ObjectDetection<br>
-│   ├── cfg<br>
+│       あ ├── cfg<br>
 │   ├── data<br>
-│   │   └── Torii：YOLOv3に学習させる画像データとラベルデータ<br>
+│   │       └── Torii：YOLOv3に学習させる画像データとラベルデータ<br>
 │   ├── examples<br>
 │   ├── include<br>
 │   ├── python<br>
@@ -18,7 +18,9 @@ Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedu
     └── Torii<br>
     └── Pagoda<br>
     └── CarNumberPlate<br>
-
+</pre>
+ 
+ 
 -----------
 # How to Use
 
