@@ -74,22 +74,30 @@ $python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 #### 1. LabelImgを用いて画像にアノテーション付け
 - [ここ](https://demura.net/misc/14350.html)を参考にして，チーム内で作業分担しながらラベル付けをする．
 
-- 車のナンバープレート(Car-Number-Plate)担当はこちら
+
+### for Car-Number-Plate Team
+1. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜からCarNumberPlate〜.〜に変更する．
+2. ObjectDetectionディレクトリ内のdataフォルダにあるToriiフォルダを削除し，dataフォルダ内に新規フォルダを作成．(名前:CarNumberPlate)
+3. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
-$python3 labelImg.py ../2020SpringSeminar/Resource/Car-Number-Plate ./2020SpringSeminar/Resource/Car-Number-Plate.txt
+$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Car-Number-Plate ./2020SpringSeminar/Resource/Car-Number-Plate.txt
 ```
-- 五重の塔(Pagoda)担当はこちら
+- 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+
+
+### for Pagoda Team
+1. ObjectDetectionディレクトリ内のdataフォルダ内に新規フォルダを作成．(名前:Pagoda)
+2. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
-$python3 labelImg.py ../2020SpringSeminar/Resource/Pagoda ./2020SpringSeminar/Resource/JapaneseObject.txt   
+$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Pagoda ./2020SpringSeminar/Resource/JapaneseObject.txt   
 ```
+- 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Pagoda
+
 
 ## Step 2
-ObjectDetectionフォルダを編集して，リモートリポジトリにアップロード(push)する．<br>
-#### 0. ObjectDetection/cfgを編集
-ObjectDetection/README.mdの参考文献[1]を参考に変更する．
+ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジトリにアップロード(push)する．<br>
+- ObjectDetection/README.mdの参考文献[1]を参考に変更する．
 
-#### 1. ObjectDetection/dataを編集
-ObjectDetection/README.mdの参考文献[1]を参考に変更する．
 
 
 
@@ -102,6 +110,11 @@ Google Colabを用いてYoLov3をファインチューニングする．<br>
 #### 1. 上記のファイルをGoogleColabで操作する．今後の操作はファイル内部にコメントあり．
 - Google ColabとはGoogleが無償で提供するGPUインスタンス．(タイムアウトがあることに注意)
 - "Shif + Enter"でセル単位での実行が可能．
+
+
+## Step 4
+- 各自がアノテーション付けした画像を共有して，学習データセットの枚数を増加させる．
+- ファインチューニングをもう一度行い，検証してみる．
 
 
 
