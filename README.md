@@ -20,6 +20,7 @@ $cd /Users/〜〜/Desktop/NAIST
 ##### [確認0]:NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
 
 #### 2. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
+     $cd /Users/〜〜/Desktop/NAIST/2020SpringSeminar/
      $git branch 
      * master
      $git branch yohei
