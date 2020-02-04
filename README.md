@@ -43,7 +43,9 @@ OSS(Open Sourcce Software)のアノンテーションツールである，LabelI
 $python --version
 $python3 --version
 ```
-python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にインストールする．
+~python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にインストールする．~<br>
+
+[New]Anaconda3系を入れる．
 
 ##### [確認1]:python3系が入っていることをメンターに確認してもらった後，以下に進む．
 - Macユーザは以下の手順で行う．<br>
