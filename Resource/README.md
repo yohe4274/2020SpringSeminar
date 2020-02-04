@@ -1,0 +1,2 @@
+以下のサイトを参考にスクレイピング用コードをscraping_icrawlerpyに実装．
+https://qiita.com/NakaokaRei/items/8c7e7b1f2c0c7ef8b3a3
