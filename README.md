@@ -35,7 +35,7 @@ $python3 --version
 ~python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にインストールする．~<br>
 python3系がインストールされていない人はAnaconda3系を入れる．
 
-##### [確認1]:python3系が入っていることをメンターに確認してもらった後，以下に進む．
++ [ ]  **確認1**：python3系が入っていることをメンターに確認してもらった後，以下に進む．
 
 
 -----------
@@ -51,7 +51,7 @@ $cd /Users/〜〜/Desktop/NAIST
 #### 2. 本リポジトリをクローンする．
     $git clone https://github.com/yohe4274/2020SpringSeminar.git
 - git clone：リモートリポジトリをローカルリポジトリに複製する．
-##### [確認2]:NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
++ [ ]  **確認2**：NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
 
 #### 3. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
      $cd /Users/〜〜/Desktop/NAIST/2020SpringSeminar/
