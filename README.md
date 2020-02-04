@@ -85,7 +85,8 @@ $git clone https://github.com/tzutalin/labelImg.git
 $cd /Users/〜〜/Desktop/NAIST/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $make qt5py3
-$python3 labelImg.py #GUIで実行可能か確認．確認できたら閉じる
+$python3 labelImg.py 
+#GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
 ```    
 
 
@@ -96,26 +97,31 @@ $git clone https://github.com/tzutalin/labelImg.git
 $cd /Users/〜〜/Desktop/NAIST/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $pyrcc5 -o resources.py resources.qrc
-$python labelImg.py  #GUIで実行可能か確認．確認できたら閉じてメンターに知らせる．
-$python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+$python labelImg.py  
+#GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
 ```
-    - windowsでエラーが出たら[ここ](https://stackoverflow.com/questions/58140305/labelimg-pyrcc5-is-not-recognized-as-an-internal-or-external-command)を参考にする．
+
++ Windowsでエラーが出たら[ここ](https://stackoverflow.com/questions/58140305/labelimg-pyrcc5-is-not-recognized-as-an-internal-or-external-command)を参考にする．
 
 #### 2. LabelImgを用いて画像にアノテーション付け
 - [ここ](https://demura.net/misc/14350.html)を参考にして，チーム内で作業分担しながらラベル付けをする．
 
 
-### for Car-Number-Plate Team
-1. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜からCarNumberPlate〜.〜に変更する．
-2. ObjectDetectionディレクトリ内のdataフォルダにあるToriiフォルダを削除し，dataフォルダ内に新規フォルダを作成．(名前:CarNumberPlate)
+##### **for Car-Number-Plate Team**
+1. ObjectDetectionディレクトリ内のdataフォルダにあるToriiフォルダを削除し，dataフォルダ内に新規フォルダを作成．(名前:CarNumberPlate)
+```
+$rm -rf /Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Torii
+$mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+```
+2. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜をCarNumberPlate〜.〜に変更する．
 3. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
-$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Car-Number-Plate ./2020SpringSeminar/Resource/Car-Number-Plate.txt
+$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/CarNumberPlate ./2020SpringSeminar/Resource/CarNumberPlate.txt
 ```
 - 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/CarNumberPlate
 
 
-### for Pagoda Team
+##### **for Pagoda Team**
 1. ObjectDetectionディレクトリ内のdataフォルダ内に新規フォルダを作成．(名前:Pagoda)
 ```
 $ mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/data/Pagoda
