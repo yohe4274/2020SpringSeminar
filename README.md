@@ -3,8 +3,67 @@ Hi there✌️ this repository is for Spring Seminar 2020 in Ubi Lab<br>
 Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedule)
 
 # Contents
-
-
+<pre>
+.
+├── ObjectDetection
+│   ├── LICENSE
+│   ├── LICENSE.fuck
+│   ├── LICENSE.gen
+│   ├── LICENSE.gpl
+│   ├── LICENSE.meta
+│   ├── LICENSE.mit
+│   ├── LICENSE.v1
+│   ├── Makefile
+│   ├── README.md
+│   ├── cfg
+│   │   ├── JapaneseObject-frozen.cfg
+│   │   ├── JapaneseObject-test.txt
+│   │   ├── JapaneseObject-train.txt
+│   │   ├── JapaneseObject.cfg
+│   │   └── JapaneseObject.data
+│   ├── data  #YoLov3に学習させるデータ集
+│   │   ├── JapaneseObject.names
+│   │   └── Torii
+│   │       ├── 000001.jpg
+│   │       ├── 000001.txt
+│   │       ...
+│   │       ├── 000683.jpg
+│   │       ├── 000683.txt
+│   │       ├── classes.txt
+│   │       └── predefined_classes.txt
+│   ├── examples
+│   │   ├── art.c
+│   │   ├── attention.c
+│   │   ...
+│   │   └── yolo.c
+│   ├── include
+│   │   └── darknet.h
+│   ├── python
+│   │   ├── darknet.py
+│   │   ├── divide.py
+│   │   └── proverbot.py
+│   ├── scripts
+│   │   ├── dice_label.sh
+│   │   ├── gen_tactic.sh
+│   │   ...
+│   │   └── voc_label.py
+│   └── src
+│       ├── activation_kernels.cu
+│       ├── activation_layer.c
+│       ...
+│       └── yolo_layer.h
+│ 
+├── README.md
+├── Resource  #自作画像データ集
+│   ├── CarNumberPlate.txt
+│   ├── JapaneseObject.txt
+│   ├── CarNumberPlate
+│   ├── Pagoda
+│   └── Torii
+└── YOLOv3FineTuning.ipynb
+</pre>
+ 
+ 
 -----------
 # How to Use
 
