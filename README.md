@@ -7,19 +7,51 @@ Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedu
 
 
 ## Step 0
-GitHubの基本を押さえて，環境を構築する．
-#### 0. デスクトップに新規フォルダ(ディレクトリ)を作成．
+Git, GitHub, Python3.xの導入．
+#### 1. Gitの導入
+- Gitとはローカル環境でバージョン管理をする開発システムである．
+- まず，Gitが入っているかを確認する．
+```
+$git --version
+```
+入っていない場合は以下を参考にインストールする．
+- Install for [Mac](https://tracpath.com/bootcamp/git-install-to-mac.html)
+- install for [Windows](https://prog-8.com/docs/git-env-win)
+
+#### 2. GitHubの導入
+- GitHubとはリモート上でバージョン管理をするOSS(Open Sourcce Software)である．
+- 登録していない場合は，[ここ](https://qiita.com/okumurakengo/items/848f7177765cf25fcde0)を参考に登録する．<u>2段階認証はしない．<¥u>
+
+##### [確認0]:登録できたらメンターに確認してもらい，本プロジェクトに招待してもらう．
+
+#### 3. Python3系の導入
+まずPythonの3系が入っているかを以下のコマンドで確認する．
+```
+$python --version
+$python3 --version
+```
+~python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にインストールする．~<br>
+python3系がインストールされていない人はAnaconda3系を入れる．
+
+##### [確認1]:python3系が入っていることをメンターに確認してもらった後，以下に進む．
+
+
+
+
+## Step 1
+GitHubの基本を押さえて，環境を構築する． 
+#### 1. デスクトップに新規フォルダ(ディレクトリ)を作成．
 (ディレクトリ名：NAIST)
 ```
 $mkdir /Users/〜〜/Desktop/NAIST
 $cd /Users/〜〜/Desktop/NAIST
 ```    
-#### 1. 本リポジトリをクローンする．
+#### 2. 本リポジトリをクローンする．
     $git clone https://github.com/yohe4274/2020SpringSeminar.git
 - git clone：リモートリポジトリをローカルリポジトリに複製する．
-##### [確認0]:NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
+##### [確認2]:NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
 
-#### 2. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
+#### 3. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
      $cd /Users/〜〜/Desktop/NAIST/2020SpringSeminar/
      $git branch 
      * master
@@ -36,19 +68,11 @@ $cd /Users/〜〜/Desktop/NAIST
 - git branch 名前：新しくブランチを作成する．
 - git checkout 名前：ブランチの切り替えを行う．(作業場所をかえる🐸重要！)
 
-## Step 1
-OSS(Open Sourcce Software)のアノンテーションツールである，LabelImgを用いて物体検出に必要なアノテーションを付ける．<br>
+
+
+## Step 2
+OSSのアノンテーションツールである，LabelImgを用いて物体検出に必要なアノテーションを付ける．<br>
 #### 0. Labelimgのインストール
-まずPythonの3系が入っているかを以下のコマンドで確認する．
-```
-$python --version
-$python3 --version
-```
-~python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にインストールする．~<br>
-
-[New]Anaconda3系を入れる．
-
-##### [確認1]:python3系が入っていることをメンターに確認してもらった後，以下に進む．
 - Macユーザは以下の手順で行う．<br>
 ```
 $cd /Users/〜〜/Desktop/NAIST
@@ -99,25 +123,34 @@ $python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/R
 - 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Pagoda
 
 
-## Step 2
+## Step 3
 ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジトリにアップロード(push)する．<br>
 - ObjectDetection/README.mdの参考文献[1]を参考に変更する．
 
 
 
-
-
-## Step 3
-Google Colabを用いてYoLov3をファインチューニングする．<br>
-#### 0. YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
-好きなアカウント，場所にアップロードしてOK
-
-#### 1. 上記のファイルをGoogleColabで操作する．今後の操作はファイル内部にコメントあり．
-- Google ColabとはGoogleが無償で提供するGPUインスタンス．(タイムアウトがあることに注意)
-- "Shif + Enter"でセル単位での実行が可能．
-
+- git add ファイル名：ローカルリポジトリで更新するファイルを選択．
+- git commit -m "message"：ローカルリポジトリを更新(コミット)する．""で囲まれた中にコミットメッセージを記入する．
+- git push origin ブランチ名：ローカルリポジトリの変化をリモートリポジトリの指定のブランチで更新する．
+- エラーが出たらまずググってみよう．  
 
 ## Step 4
+Google Colabを用いてYoLov3をファインチューニングする．<br>
+#### 0. Users/〜〜/Desktop/NAIST/2020SpringSeminar/YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
+好きなアカウント，場所にアップロードしてOK
+
+#### 0. Google Colabをインストール
+- [ここ](https://qiita.com/shoji9x9/items/0ff0f6f603df18d631ab)を参考にColabを入れる．
+
+#### 1. 上記のファイルをGoogleColabで操作する．
+- Google ColabとはGoogleが無償で提供するGPUインスタンス．(タイムアウトがあることに注意)
+- "Shif + Enter"でセル単位での実行が可能．
+- 今後の操作はファイル内部にコメントあり．
+
+-----------
+
+
+## Step 5(時間があったら)
 - 各自がアノテーション付けした画像を共有して，学習データセットの枚数を増加させる．
 - ファインチューニングをもう一度行い，検証してみる．
 
