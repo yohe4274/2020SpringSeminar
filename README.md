@@ -2,9 +2,11 @@
 Hi there✌️ this repository is for Spring Seminar 2020 in Ubi Lab<br>
 Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedule)
 
-## Contents
+# Contents
 
 
+-----------
+# How to Use
 
 ## Step 0
 Git, GitHub, Python3.xの導入．
@@ -16,13 +18,13 @@ $git --version
 ```
 入っていない場合は以下を参考にインストールする．
 - Install for [Mac](https://tracpath.com/bootcamp/git-install-to-mac.html)
-- install for [Windows](https://prog-8.com/docs/git-env-win)
+- Install for [Windows](https://prog-8.com/docs/git-env-win)
 
 #### 2. GitHubの導入
 - GitHubとはリモート上でバージョン管理をするOSS(Open Sourcce Software)である．
-- 登録していない場合は，[ここ](https://qiita.com/okumurakengo/items/848f7177765cf25fcde0)を参考に登録する．<u>2段階認証はしない．<¥u>
+- 登録していない場合は，[ここ](https://qiita.com/okumurakengo/items/848f7177765cf25fcde0)を参考に登録する．*2段階認証はしない*
 
-##### [確認0]:登録できたらメンターに確認してもらい，本プロジェクトに招待してもらう．
++ [ ]  **確認0**：登録できたらメンターに確認してもらい，本プロジェクトに招待してもらう．
 
 #### 3. Python3系の導入
 まずPythonの3系が入っているかを以下のコマンドで確認する．
@@ -36,7 +38,7 @@ python3系がインストールされていない人はAnaconda3系を入れる�
 ##### [確認1]:python3系が入っていることをメンターに確認してもらった後，以下に進む．
 
 
-
+-----------
 
 ## Step 1
 GitHubの基本を押さえて，環境を構築する． 
@@ -68,7 +70,7 @@ $cd /Users/〜〜/Desktop/NAIST
 - git branch 名前：新しくブランチを作成する．
 - git checkout 名前：ブランチの切り替えを行う．(作業場所をかえる🐸重要！)
 
-
+-----------
 
 ## Step 2
 OSSのアノンテーションツールである，LabelImgを用いて物体検出に必要なアノテーションを付ける．<br>
@@ -121,7 +123,7 @@ $ mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/data/Pagoda
 $python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Pagoda ./2020SpringSeminar/Resource/JapaneseObject.txt   
 ```
 - 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Pagoda
-
+-----------
 
 ## Step 3
 ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジトリにアップロード(push)する．<br>
@@ -133,7 +135,7 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
 - git commit -m "message"：ローカルリポジトリを更新(コミット)する．""で囲まれた中にコミットメッセージを記入する．
 - git push origin ブランチ名：ローカルリポジトリの変化をリモートリポジトリの指定のブランチで更新する．
 - エラーが出たらまずググってみよう．  
-
+-----------
 ## Step 4
 Google Colabを用いてYoLov3をファインチューニングする．<br>
 #### 0. Users/〜〜/Desktop/NAIST/2020SpringSeminar/YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
