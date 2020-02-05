@@ -101,7 +101,7 @@ GitHubの基本を押さえて，環境を構築する．
 
 ## Step 2
 OSSのアノンテーションツールである，LabelImgを用いて物体検出に必要なアノテーションを付ける．<br>
-#### 1. Labelimgのインストール
+#### 1. Labelimgのビルド
 - Macユーザは以下の手順で行う．<br>
 ```
 $cd ./2020SpringSeminar/labelImg
@@ -130,12 +130,14 @@ $python labelImg.py
 ##### **for Car-Number-Plate Team**
 1. ObjectDetectionディレクトリ内のdataフォルダにあるToriiフォルダを削除し，dataフォルダ内に新規フォルダを作成．(名前:CarNumberPlate)
 ```
-$rm -rf ./2020SpringSeminar/ObjectDetection/data/Torii
-$mkdir ./2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+$cd 2020SpringSeminar
+$rm -rf ./ObjectDetection/data/Torii
+$mkdir ./ObjectDetection/data/CarNumberPlate
 ```
 2. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜をCarNumberPlate〜.〜に変更する．
 3. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
+$cd labelImg
 $python3 labelImg.py ../Resource/CarNumberPlate ../Resource/CarNumberPlate.txt
 ```
 - 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/CarNumberPlate
@@ -144,11 +146,13 @@ $python3 labelImg.py ../Resource/CarNumberPlate ../Resource/CarNumberPlate.txt
 ##### **for Pagoda Team**
 1. ObjectDetectionディレクトリ内のdataフォルダ内に新規フォルダを作成．(名前:Pagoda)
 ```
-$ mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/data/Pagoda
+$cd 2020SpringSeminar
+$ mkdir ./ObjectDetection/data/Pagoda
 ```
 
 2. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
+$cd labelImg
 $python3 labelImg.py ../Resource/Pagoda ../Resource/JapaneseObject.txt   
 ```
 - 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/Pagoda
@@ -157,9 +161,16 @@ $python3 labelImg.py ../Resource/Pagoda ../Resource/JapaneseObject.txt
 ## Step 3
 ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジトリにアップロード(push)する．<br>
 - ObjectDetection/README.mdの参考文献[1]を参考に変更する．
-
-
-- 各コマンドの説明    
+```
+# 編集が必要なファイル
+./2020SpringSeminar/ObjectDetection/cfg/~~-frozen.cfg
+./2020SpringSeminar/ObjectDetection/cfg/~~.cfg
+./2020SpringSeminar/ObjectDetection/cfg/~~.data
+./2020SpringSeminar/ObjectDetection/cfg/~~-test.txt
+./2020SpringSeminar/ObjectDetection/cfg/~~-train.txt
+./2020SpringSeminar/ObjectDetection/data/.names
+```
+- 各コマンドの説明 (基本的にadd→commit→pushの順に行う)
     - git add ファイル名：ファイルを選択し，ローカルリポジトリで更新する．
     - git add \*：全てのファイルをローカルリポジトリで更新する．
     - git commit -m "message"：ローカルリポジトリを更新(コミット)する．""で囲まれた中にコミットメッセージを記入する．
