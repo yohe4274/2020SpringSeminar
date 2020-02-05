@@ -166,8 +166,8 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
 ./2020SpringSeminar/ObjectDetection/cfg/~~-frozen.cfg
 ./2020SpringSeminar/ObjectDetection/cfg/~~.cfg
 ./2020SpringSeminar/ObjectDetection/cfg/~~.data
-./2020SpringSeminar/ObjectDetection/cfg/~~-test.txt
-./2020SpringSeminar/ObjectDetection/cfg/~~-train.txt
+./2020SpringSeminar/ObjectDetection/cfg/~~-test.txt #split.pyが便利(自分で実装してもOK)
+./2020SpringSeminar/ObjectDetection/cfg/~~-train.txt #split.pyが便利
 ./2020SpringSeminar/ObjectDetection/data/.names
 ```
 - 各コマンドの説明 (基本的にadd→commit→pushの順に行う)
