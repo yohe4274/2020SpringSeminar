@@ -69,6 +69,7 @@ python3系がインストールされていない人は[Anaconda3](https://qiita
 
 ## Step 1
 GitHubの基本を押さえて，環境を構築する． 
+####  0.  ターミナルを開く．
   
 #### 1. 任意のディレクトリに本リポジトリをクローンする．
     $git clone https://github.com/yohe4274/2020SpringSeminar.git
