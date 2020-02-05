@@ -101,7 +101,7 @@ GitHubの基本を押さえて，環境を構築する．
 
 ## Step 2
 OSSのアノンテーションツールである，LabelImgを用いて物体検出に必要なアノテーションを付ける．<br>
-#### 1. Labelimgのインストール
+#### 1. Labelimgのビルド
 - Macユーザは以下の手順で行う．<br>
 ```
 $cd ./2020SpringSeminar/labelImg
