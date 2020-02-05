@@ -5,62 +5,30 @@ Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedu
 # Contents
 <pre>
 .
-├── ObjectDetection
-│   ├── LICENSE
-│   ├── LICENSE.fuck
-│   ├── LICENSE.gen
-│   ├── LICENSE.gpl
-│   ├── LICENSE.meta
-│   ├── LICENSE.mit
-│   ├── LICENSE.v1
-│   ├── Makefile
-│   ├── README.md
-│   ├── cfg
-│   │   ├── JapaneseObject-frozen.cfg
-│   │   ├── JapaneseObject-test.txt
-│   │   ├── JapaneseObject-train.txt
-│   │   ├── JapaneseObject.cfg
-│   │   └── JapaneseObject.data
-│   ├── data  #YoLov3に学習させるデータ集
-│   │   ├── JapaneseObject.names
-│   │   └── Torii
-│   │       ├── 000001.jpg
-│   │       ├── 000001.txt
-│   │       ...
-│   │       ├── 000683.jpg
-│   │       ├── 000683.txt
-│   │       ├── classes.txt
-│   │       └── predefined_classes.txt
-│   ├── examples
-│   │   ├── art.c
-│   │   ├── attention.c
-│   │   ...
-│   │   └── yolo.c
+├── ObjectDetection #YoLov3によるファインチューニングディレクトリ
+│   ├── cfg
+│   ├── data
+│   │   └── Torii #学習用・テスト用データセットを配置する．
+│   ├── examples
 │   ├── include
-│   │   └── darknet.h
 │   ├── python
-│   │   ├── darknet.py
-│   │   ├── divide.py
-│   │   └── proverbot.py
 │   ├── scripts
-│   │   ├── dice_label.sh
-│   │   ├── gen_tactic.sh
-│   │   ...
-│   │   └── voc_label.py
 │   └── src
-│       ├── activation_kernels.cu
-│       ├── activation_layer.c
-│       ...
-│       └── yolo_layer.h
-│ 
-├── README.md
-├── Resource  #自作画像データ集
-│   ├── CarNumberPlate.txt
-│   ├── JapaneseObject.txt
-│   ├── CarNumberPlate
-│   ├── Pagoda
-│   └── Torii
-└── YOLOv3FineTuning.ipynb
+├── Resource #オリジナル画像データセット
+│   ├── CarNumberPlate #共同研究先のドラレコ動画を140フレーム(13.98fps x 10frame)ごとに保存したもの
+│   ├── Pagoda #スクレイピングにより取得(keyword：五重の塔，三重の塔)
+│   └── Torii #スクレイピングにより取得(keyword：鳥居)
+└── labelImg #アノテーションソフト
+    ├── build-tools
+    ├── data
+    ├── demo
+    ├── libs
+    ├── requirements
+    ├── resources
+    │   ├── icons
+    │   └── strings
+    └── tests
+
 </pre>
  
  
@@ -101,23 +69,19 @@ python3系がインストールされていない人は[Anaconda3](https://qiita
 
 ## Step 1
 GitHubの基本を押さえて，環境を構築する． 
-#### 1. デスクトップに新規フォルダ(ディレクトリ)を作成．(ディレクトリ名：NAIST)
-```
-$mkdir /Users/〜〜/Desktop/NAIST
-$cd /Users/〜〜/Desktop/NAIST
-```    
-#### 2. 本リポジトリをクローンする．
+  
+#### 1. 任意のディレクトリに本リポジトリをクローンする．
     $git clone https://github.com/yohe4274/2020SpringSeminar.git
 
 - 各コマンドの説明    
     - git clone：リモートリポジトリをローカルリポジトリに複製する．
 + [ ]  **確認2**：NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
 
-#### 3. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
-     $cd /Users/〜〜/Desktop/NAIST/2020SpringSeminar/
+#### 2. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
+     $cd ./2020SpringSeminar/
      $git branch 
      * master
-     $git branch yohei
+     $git branch yohei  #yoheiは自分の名前に変える
      * master
        yohei
      $git checkout yohei
@@ -139,9 +103,7 @@ OSSのアノンテーションツールである，LabelImgを用いて物体検
 #### 1. Labelimgのインストール
 - Macユーザは以下の手順で行う．<br>
 ```
-$cd /Users/〜〜/Desktop/NAIST
-$git clone https://github.com/tzutalin/labelImg.git
-$cd /Users/〜〜/Desktop/NAIST/labelImg
+$cd ./2020SpringSeminar/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $make qt5py3
 $python3 labelImg.py 
@@ -151,9 +113,7 @@ $python3 labelImg.py
 
 - Windowsユーザは以下の手順で行う．<br>
 ```
-$cd /Users/〜〜/Desktop/NAIST
-$git clone https://github.com/tzutalin/labelImg.git
-$cd /Users/〜〜/Desktop/NAIST/labelImg
+$cd ./2020SpringSeminar/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $pyrcc5 -o resources.py resources.qrc
 $python labelImg.py  
@@ -169,15 +129,15 @@ $python labelImg.py
 ##### **for Car-Number-Plate Team**
 1. ObjectDetectionディレクトリ内のdataフォルダにあるToriiフォルダを削除し，dataフォルダ内に新規フォルダを作成．(名前:CarNumberPlate)
 ```
-$rm -rf /Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Torii
-$mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+$rm -rf ./2020SpringSeminar/ObjectDetection/data/Torii
+$mkdir ./2020SpringSeminar/ObjectDetection/data/CarNumberPlate
 ```
 2. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜をCarNumberPlate〜.〜に変更する．
 3. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
-$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/CarNumberPlate ./2020SpringSeminar/Resource/CarNumberPlate.txt
+$python3 labelImg.py ../Resource/CarNumberPlate ../Resource/CarNumberPlate.txt
 ```
-- 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+- 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/CarNumberPlate
 
 
 ##### **for Pagoda Team**
@@ -188,9 +148,9 @@ $ mkdir /Users/〜〜/Desktop/NAIST/2020SpringSeminar/data/Pagoda
 
 2. 以下のコマンドでLabelImgを起動し，アノテーション付け．
 ```
-$python3 /Users/〜〜/Desktop/NAIST/LabelImg/labelImg.py ../2020SpringSeminar/Resource/Pagoda ./2020SpringSeminar/Resource/JapaneseObject.txt   
+$python3 labelImg.py ../Resource/Pagoda ../Resource/JapaneseObject.txt   
 ```
-- 出力先フォルダは/Users/〜〜/Desktop/NAIST/2020SpringSeminar/ObjectDetection/data/Pagoda
+- 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/Pagoda
 -----------
 
 ## Step 3
@@ -207,7 +167,7 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
 -----------
 ## Step 4
 Google Colabを用いてYoLov3をファインチューニングする．<br>
-#### 1. Users/〜〜/Desktop/NAIST/2020SpringSeminar/YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
+#### 1. ./YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
 好きなアカウント，場所にアップロードしてOK
 
 #### 2. Google Colabをインストール
