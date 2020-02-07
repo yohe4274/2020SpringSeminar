@@ -198,6 +198,7 @@ Google Colabを用いてYoLov3をファインチューニングする．<br>
 Step4-1ができない場合はStep4-2を行う．
 #### 1. GitHubにてYOLOv3FineTuning.ipynbのファイルをクリックする.
 #### 2. 画面中央・青ボタンのOpen in Colabボタンを押し，別タブでGoogle Colabを開く
+- 以降の操作はファイル内部にコメントあり．
 
 
 ## Step 4-2
