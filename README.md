@@ -193,8 +193,14 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
     - git push origin ブランチ名：ローカルリポジトリの変化をリモートリポジトリの指定のブランチで更新する．
 
 -----------
-## Step 4
+## Step 4-1
 Google Colabを用いてYoLov3をファインチューニングする．<br>
+Step4-1ができない場合はStep4-2を行う．
+#### 1. GitHubにてYOLOv3FineTuning.ipynbのファイルをクリックする.
+#### 2. 画面中央・青ボタンのOpen in Colabボタンを押し，別タブでGoogle Colabを開く
+
+
+## Step 4-2
 #### 1. ./YOLOv3FineTuning.ipynbをGoogle Driveにアップロードする．
 好きなアカウント，場所にアップロードしてOK
 
