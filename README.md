@@ -15,9 +15,12 @@ Schedule is [here](http://isw3.naist.jp/IS/PubWG/Spring2020/index-ja.html#schedu
 │   ├── scripts
 │   └── src
 ├── Resource #オリジナル画像データセット
-│   ├── CarNumberPlate #共同研究先のドラレコ動画を140フレーム(13.98fps x 10frame)ごとに保存したもの
+│   ├── CarNumberPlate #共同研究先の京都ドラレコ動画を140フレーム(13.98fps x 10frame)ごとに保存したもの
 │   ├── Pagoda #スクレイピングにより取得(keyword：五重の塔，三重の塔)
-│   └── Torii #スクレイピングにより取得(keyword：鳥居)
+│   ├── Torii #スクレイピングにより取得(keyword：鳥居)
+│   └── Validation #検証用データセット(上記のデータとの重複無し）
+│      ├── CarNumberPlate #共同研究先の沖縄ドラレコ動画
+│      └── Pagoda #共同研究先の京都ドラレコ動画
 └── labelImg #アノテーションソフト
     ├── build-tools
     ├── data
