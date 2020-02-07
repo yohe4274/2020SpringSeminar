@@ -138,13 +138,19 @@ $rm -rf ./ObjectDetection/data/Torii
 $mkdir ./ObjectDetection/data/CarNumberPlate
 ```
 2. ObjectDetectionディレクトリ内のcfgフォルダと,dataフォルダにある各ファイルの名前について，JapaneseObject〜.〜をCarNumberPlate〜.〜に変更する．
-3. 以下のコマンドでLabelImgを起動し，アノテーション付け．
+3. LabelImgを起動し，アノテーション付け．
 ```
 $cd labelImg
 $python3 labelImg.py ../Resource/CarNumberPlate ../Resource/CarNumberPlate.txt
 ```
-- 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/CarNumberPlate
+- 出力先フォルダは ./2020SpringSeminar/Resource/CarNumberPlate_VB
 
+4. YOLOv3に学習させるデータセットをObjectDetection/data以下に配置する．
+```
+$cd 2020SpringSeminar
+$cp Resource/CarNumberPlate/* ObjectDetection/data/CarNumberPlate/
+$cp Resource/CarNumberPlate_VB/* ObjectDetection/data/CarNumberPlate/
+```
 
 ##### **for Pagoda Team**
 1. ObjectDetectionディレクトリ内のdataフォルダ内に新規フォルダを作成．(名前:Pagoda)
@@ -153,12 +159,19 @@ $cd 2020SpringSeminar
 $ mkdir ./ObjectDetection/data/Pagoda
 ```
 
-2. 以下のコマンドでLabelImgを起動し，アノテーション付け．
+2. LabelImgを起動し，アノテーション付け．
 ```
 $cd labelImg
 $python3 labelImg.py ../Resource/Pagoda ../Resource/JapaneseObject.txt   
 ```
-- 出力先フォルダは ./2020SpringSeminar/ObjectDetection/data/Pagoda
+- 出力先フォルダは ./2020SpringSeminar/Resource/Pagoda_VB
+
+4. YOLOv3に学習させるデータセットをObjectDetection/data以下に配置する．
+```
+$cd 2020SpringSeminar
+$cp Resource/Pagoda/* ObjectDetection/data/Pagoda/
+$cp Resource/Pagoda_VB/* ObjectDetection/data/Pagoda/
+```
 -----------
 
 ## Step 3
