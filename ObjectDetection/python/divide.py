@@ -1,31 +1,47 @@
-import glob, os
+import os
+import glob
 
-# Current directory
-current_dir = os.path.dirname(os.path.abspath(__file__))
+img_files = sorted(glob.glob("../data/Torii/*.jpg"))
+txt_files = sorted(glob.glob("../data/Torii/*.txt"))
+print("The number of image-files is", len(img_files), ".")
+print("The number of annotaion-files is", len(txt_files), ".")
 
-print(current_dir)
 
-current_dir = '../data/JapaneseObject/'
-g_colab_full_path='/cotent/JapaneseObjectDetection/data/JapaneseObject'
+# 例外処理
+if len(img_files) != len(txt_files):
+    print("the number of files is not same.")
+else:
 
-# Percentage of images to be used for the test set
-percentage_test = 10;
+    # Percentage of images to be used for the test set
+    percentage_test = 10;
+    counter = 1
+    index_test = round(100 / percentage_test)
 
-# Create and/or truncate train.txt and test.txt
-file_train = open('JapaneseObject-train.txt', 'w')
-file_test = open('JapaneseObject-test.txt', 'w')# Populate train.txt and test.txt
-counter = 1
-index_test = round(100 / percentage_test)
-print(current_dir)
-# for pathAndFilename in glob.iglob(os.path.join(current_dir, "*.jpg")):
-for pathAndFilename in glob.iglob(os.path.join(current_dir, "*.jpg")):
-    print(pathAndFilename)
-    title, ext = os.path.splitext(os.path.basename(pathAndFilename))
-    if counter == index_test:
-        counter = 1
-        # file_test.write(g_colab_full_path + "/" + title + '.jpg' + "\n")
-        file_test.write(g_colab_full_path + "/" + title  + "\n")
-    else:
-        # file_train.write(g_colab_full_path + "/" + title + '.jpg' + "\n")
-        file_train.write(g_colab_full_path + "/" + title + "\n")
-        counter = counter + 1
+
+    train_num = 0
+    test_num = 0
+
+
+    # 学習画像，テスト画像を示すパスを以下のテキストファイルに保存する．
+    path_train = '../cfg/JapaneseObject-train.txt'
+    path_test = '../cfg/JapaneseObject-test.txt'
+
+
+
+    train_w = open(path_train, 'w')
+    test_w = open(path_test, 'w')
+
+    for i in range(len(img_files)):
+        if counter == index_test:
+            counter = 1
+            test_w.write(img_files[i].split('./')[1]+"\n")
+            test_num += 1
+        else:
+            train_w.write(img_files[i].split('./')[1]+"\n")
+            counter = counter + 1
+            train_num += 1
+
+    print("train-num is", train_num, ".")
+    print("test-imgs is",  test_num,".")
+    train_w.close()
+    test_w.close()
