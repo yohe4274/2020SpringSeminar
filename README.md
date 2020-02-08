@@ -82,7 +82,6 @@ GitHubの基本を押さえて，環境を構築する．
 
 - 各コマンドの説明    
     - git clone：リモートリポジトリをローカルリポジトリに複製する．
-+ [ ]  **確認2**：NAISTディレクトリ以下に2020SpringSeminarフォルダが作成されていることを確認する．
 
 #### 2. クローンしたローカルリポジトリについて，プロジェクトの枝分かれを行い自分の作業場所を確保する．(ブランチを切る)
      $cd ./2020SpringSeminar/
@@ -103,6 +102,7 @@ GitHubの基本を押さえて，環境を構築する．
     - git branch 名前：新しくブランチを作成する．
     - git checkout 名前：ブランチの切り替えを行う．(作業場所をかえる🐸重要！)
 
++ [ ]  **確認2**：ブランチ切れているかをメンターに確認してもらう．
 -----------
 
 ## Step 2
@@ -114,7 +114,7 @@ $cd ./2020SpringSeminar/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $make qt5py3
 $python3 labelImg.py 
-#GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
+#確認３：GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
 ```    
 
 
@@ -124,7 +124,7 @@ $cd ./2020SpringSeminar/labelImg
 $pip3 install pyqt5 lxml # Install qt and lxml by pip
 $pyrcc5 -o resources.py resources.qrc
 $python labelImg.py  
-#GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
+#確認３：GUIで実行可能か確認. 確認できたら閉じてメンターに知らせる．
 ```
 
 + Windowsでエラーが出たら[ここ](https://stackoverflow.com/questions/58140305/labelimg-pyrcc5-is-not-recognized-as-an-internal-or-external-command)を参考にする．
@@ -175,6 +175,9 @@ $cd 2020SpringSeminar
 $cp Resource/Pagoda/* ObjectDetection/data/Pagoda/
 $cp Resource/Pagoda_VB/* ObjectDetection/data/Pagoda/
 ```
+
++ [ ]  **確認4**：Step2アノテーション付けが終わったらメンターに確認してもらう．
+
 -----------
 
 ## Step 3
@@ -185,7 +188,7 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
 ./2020SpringSeminar/ObjectDetection/cfg/~~-frozen.cfg
 ./2020SpringSeminar/ObjectDetection/cfg/~~.cfg
 ./2020SpringSeminar/ObjectDetection/cfg/~~.data
-./2020SpringSeminar/ObjectDetection/cfg/~~-test.txt #split.pyが便利(自分で実装してもOK)
+./2020SpringSeminar/ObjectDetection/cfg/~~-test.txt #python/divide.pyが便利(perentage_testで学習テストの割合を変更可能．)
 ./2020SpringSeminar/ObjectDetection/cfg/~~-train.txt #split.pyが便利
 ./2020SpringSeminar/ObjectDetection/data/.names
 ```
@@ -194,6 +197,9 @@ ObjectDetection内のdata,cfgフォルダを編集して，リモートリポジ
     - git add \*：全てのファイルをローカルリポジトリで更新する．
     - git commit -m "message"：ローカルリポジトリを更新(コミット)する．""で囲まれた中にコミットメッセージを記入する．
     - git push origin ブランチ名：ローカルリポジトリの変化をリモートリポジトリの指定のブランチで更新する．
+
++ [ ]  **確認5**：Step3が終わったらメンターに確認してもらう．
+
 
 -----------
 ## Step 4-1
@@ -215,6 +221,8 @@ Step4-1ができない場合はStep4-2を行う．
 - Google ColabとはGoogleが無償で提供するGPUインスタンス．(タイムアウトがあることに注意)
 - "Shif + Enter"でセル単位での実行が可能．
 - 以降の操作はファイル内部にコメントあり．
+
++ [ ]  **確認*6*：Step4が終わったらメンターに確認してもらう．
 
 -----------
 
