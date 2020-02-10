@@ -66,7 +66,7 @@ $python --version
 $python3 --version
 ```
 ~python3系がインストールされていない人は[ここ](https://qiita.com/Yohey32/items/6684c7cf05dac2d42a11)を参考にpython3.xをインストールする．~<br>
-python3系がインストールされていない人は[Anaconda3](https://qiita.com/t2y/items/2a3eb58103e85d8064b6)系を入れる．
+python3系がインストールされていない人は，[Koji Noshitaさんの記事](https://koji.noshita.net/page/compbio/env/envpython/)を参考にAnaconda3を入れる．
 
 + [ ]  **確認1**：python3系が入っていることをメンターに確認してもらった後，以下に進む．
 
